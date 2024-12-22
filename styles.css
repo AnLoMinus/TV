@@ -54,75 +54,86 @@ body {
 }
 
 .price-card {
-  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 2.5rem !important;
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid #e9ecef;
   position: relative;
-  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.price-card.featured {
+  border: 2px solid #28a745;
+  transform: scale(1.05);
 }
 
 .price-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.price-card::before {
-  content: "המלצת החודש ⭐";
-  position: absolute;
-  top: 20px;
-  right: -35px;
-  background: var(--primary-color);
-  color: white;
-  padding: 8px 40px;
-  transform: rotate(45deg);
-  font-size: 0.9rem;
-  font-weight: 600;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.price-card h3 {
-  color: var(--primary-color);
-  font-size: 2rem;
+.price-card .gradient-text {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
   margin-bottom: 1.5rem;
-  font-weight: 800;
 }
 
-.price {
-  font-size: 4rem !important;
-  font-weight: 800;
-  color: #2c3e50;
-  margin: 1.5rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+.price-card .price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
 }
 
-.price small {
-  font-size: 1.2rem;
-  color: #6c757d;
-  font-weight: 400;
+.price-card .price small {
+  font-size: 1rem;
+  color: #666;
 }
 
 .price-card ul {
-  margin: 2rem 0;
-  padding: 0 1rem;
+  margin-bottom: 2rem;
 }
 
 .price-card ul li {
-  margin: 1rem 0;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  color: #555;
 }
 
-.price-card ul li::before {
-  content: "✅";
-  font-size: 1.2rem;
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  right: 50%;
+  transform: translateX(50%);
+  background: #28a745;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.gift-badge {
+  position: absolute;
+  top: -12px;
+  right: 50%;
+  transform: translateX(50%);
+  background: #dc3545;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.renewal-price {
+  color: #28a745;
+  font-weight: bold;
+  margin: 1rem 0;
+  font-size: 0.9rem;
 }
 
 /* Pricing Section Background */
@@ -163,14 +174,6 @@ body {
 
 .price-card .btn-success:hover {
   transform: scale(1.05);
-}
-
-/* Renewal Price Note */
-.renewal-price {
-  font-size: 1rem;
-  color: #6c757d;
-  margin-top: 0.5rem;
-  font-weight: 500;
 }
 
 /* Features List Animation */

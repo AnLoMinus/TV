@@ -17,9 +17,35 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&family=Rubik:wght@400;600;800&display=swap"
         rel="stylesheet">
+    <style>
+        #google_translate_element {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        /* Hide Google Translate attribution */
+        .goog-logo-link {
+            display: none !important;
+        }
+
+        .goog-te-gadget {
+            color: transparent !important;
+        }
+
+        .goog-te-banner-frame {
+            display: none !important;
+        }
+
+        #goog-gt-tt {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="google_translate_element"></div>
     <!-- Hero Section -->
     <header class="hero-section text-center py-5 fade-in">
         <!-- הדגלים יתווספו כאן דרך JavaScript -->
@@ -188,26 +214,151 @@
     <section class="pricing py-5">
         <div class="container">
             <h2 class="text-center mb-5">מחירים 💰</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
+            <div class="row g-4">
+                <!-- חבילת בסיס -->
+                <div class="col-md-4">
                     <div class="price-card text-center hover-float">
-                        <h3 class="gradient-text">חבילה שנתית</h3>
+                        <h3 class="gradient-text">חבילת בסיס</h3>
+                        <div class="price">
+                            ₪500
+                            <small>לשנה</small>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li>ממיר TV מוכן לשימוש</li>
+                            <li>שנה גישה לערוצים מכל העולם</li>
+                            <li>מדריך חיבור פשוט ומהיר</li>
+                            <li>תמיכה טכנית ראשונית להתקנה</li>
+                        </ul>
+                        <div class="buttons-wrapper mt-4">
+                            <a href="https://wa.me/972543285967?text=היי, אני מתעניין בחבילת הבסיס"
+                                class="btn btn-success ripple pulse" target="_blank">
+                                <span>לרכישה בוואטסאפ</span>
+                                <span>📱</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- חבילת פרמיום -->
+                <div class="col-md-4">
+                    <div class="price-card text-center hover-float featured">
+                        <div class="popular-badge">הנמכר ביותר! 🌟</div>
+                        <h3 class="gradient-text">חבילת פרמיום</h3>
                         <div class="price">
                             ₪600
                             <small>לשנה</small>
                         </div>
                         <ul class="list-unstyled">
-                            <li>גישה לכל הערוצים מהעולם</li>
-                            <li>ספריית סרטים וסדרות חינמית</li>
-                            <li>התקנה וחיבור מהיר</li>
-                            <li>תמיכה ראשונית</li>
+                            <li>ממיר TV מוכן לשימוש</li>
+                            <li>שנה גישה לערוצים מכל העולם</li>
+                            <li>גישה לספריית סרטים וסדרות חינמית</li>
+                            <li>תמיכה טכנית ראשונית להתקנה</li>
                         </ul>
                         <div class="renewal-price">
-                            חידוש שנתי: ₪240 בלבד (₪20 לחודש)
+                            חידוש שנתי: ₪240 בלבד
                         </div>
                         <div class="buttons-wrapper mt-4">
-                            <a href="https://wa.me/972543285967?text=..." class="btn btn-success ripple pulse"
-                                target="_blank">
+                            <a href="https://wa.me/972543285967?text=היי, אני מתעניין בחבילת הפרמיום"
+                                class="btn btn-success ripple pulse" target="_blank">
+                                <span>לרכישה בוואטסאפ</span>
+                                <span>📱</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- חבילת פלוס -->
+                <div class="col-md-4">
+                    <div class="price-card text-center hover-float">
+                        <h3 class="gradient-text">חבילת פלוס</h3>
+                        <div class="price">
+                            ₪850
+                            <small>לשנתיים</small>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li>ממיר TV מוכן לשימוש</li>
+                            <li>שנתיים גישה לערוצים מכל העולם</li>
+                            <li>גישה לספריית סרטים וסדרות חינמית</li>
+                            <li>תמיכה טכנית ראשונית להתקנה</li>
+                        </ul>
+                        <div class="buttons-wrapper mt-4">
+                            <a href="https://wa.me/972543285967?text=היי, אני מתעניין בחבילת הפלוס"
+                                class="btn btn-success ripple pulse" target="_blank">
+                                <span>לרכישה בוואטסאפ</span>
+                                <span>📱</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- חבילה משפחתית -->
+                <div class="col-md-4">
+                    <div class="price-card text-center hover-float">
+                        <h3 class="gradient-text">חבילה משפחתית</h3>
+                        <div class="price">
+                            ₪1,100
+                            <small>לשנה</small>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li>2 ממירי TV מוכנים לשימוש</li>
+                            <li>שנה גישה לערוצים לכל ממיר</li>
+                            <li>גישה לספריית סרטים וסדרות לכל ממיר</li>
+                            <li>מדריך חיבור ותמיכה ראשונית</li>
+                        </ul>
+                        <div class="buttons-wrapper mt-4">
+                            <a href="https://wa.me/972543285967?text=היי, אני מתעניין בחבילה המשפחתית"
+                                class="btn btn-success ripple pulse" target="_blank">
+                                <span>לרכישה בוואטסאפ</span>
+                                <span>📱</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- חבילת מתקדם -->
+                <div class="col-md-4">
+                    <div class="price-card text-center hover-float">
+                        <h3 class="gradient-text">חבילת מתקדם</h3>
+                        <div class="price">
+                            ₪700
+                            <small>לשנה</small>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li>ממיר TV מוכן לשימוש</li>
+                            <li>שנה גישה לערוצים מכל העולם</li>
+                            <li>גישה לספריית סרטים וסדרות חינמית</li>
+                            <li>שירות עדכון מרחוק</li>
+                            <li>תמיכה טכנית ראשונית להתקנה</li>
+                        </ul>
+                        <div class="buttons-wrapper mt-4">
+                            <a href="https://wa.me/972543285967?text=היי, אני מתעניין בחבילת המתקדם"
+                                class="btn btn-success ripple pulse" target="_blank">
+                                <span>לרכישה בוואטסאפ</span>
+                                <span>📱</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- חבילת אקסטרא -->
+                <div class="col-md-4">
+                    <div class="price-card text-center hover-float">
+                        <div class="gift-badge">🎁 מתנה מושלמת!</div>
+                        <h3 class="gradient-text">חבילת אקסטרא</h3>
+                        <div class="price">
+                            ₪650
+                            <small>לשנה</small>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li>ממיר TV מוכן לשימוש</li>
+                            <li>שנה גישה לערוצים מכל העולם</li>
+                            <li>גישה לספריית סרטים וסדרות חינמית</li>
+                            <li>אריזה מעוצבת למתנה</li>
+                            <li>מדריך חיבור פשוט ומהיר</li>
+                        </ul>
+                        <div class="buttons-wrapper mt-4">
+                            <a href="https://wa.me/972543285967?text=היי, אני מתעניין בחבילת האקסטרא"
+                                class="btn btn-success ripple pulse" target="_blank">
                                 <span>לרכישה בוואטסאפ</span>
                                 <span>📱</span>
                             </a>
@@ -222,6 +373,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script src="auto-translate.js"></script>
 </body>
 
 </html>
