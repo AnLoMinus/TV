@@ -2,6 +2,41 @@
 
 Welcome to the TV Box project - your gateway to worldwide entertainment! This repository contains the website code for our TV Box service, offering access to international channels and a free content library.
 
+
+## 📸 Screenshots
+
+Here's what you can expect from our TV Box interface:
+
+1. ![Main Interface](Screenshots/1.jpg)
+   - Clean and intuitive main menu interface
+
+2. ![Channel List](Screenshots/2.jpg)
+   - Extensive list of international channels
+
+3. ![Movies Library](Screenshots/3.jpg)
+   - Rich collection of movies from various genres
+
+4. ![TV Shows Section](Screenshots/4.jpg)
+   - Latest TV shows and series
+
+5. ![Sports Channels](Screenshots/5.jpg)
+   - Live sports coverage from around the world
+
+6. ![Kids Content](Screenshots/6.jpg)
+   - Family-friendly content and children's channels
+
+7. ![News Channels](Screenshots/7.jpg)
+   - Global news coverage in multiple languages
+
+8. ![Entertainment](Screenshots/8.jpg)
+   - Entertainment channels and content
+
+9. ![Settings Interface](Screenshots/9.jpg)
+   - User-friendly settings and customization options
+
+10. ![Premium Content](Screenshots/10.jpg)
+    - Premium channels and exclusive content
+
 ## 🌐 Live Website
 
 Visit our website in your preferred language:
