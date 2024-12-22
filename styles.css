@@ -1,0 +1,551 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --heading-font: "Rubik", sans-serif;
+  --body-font: "Heebo", sans-serif;
+}
+
+body {
+  font-family: var(--body-font);
+  line-height: 1.6;
+}
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+}
+
+.price-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.price-card::before {
+  content: "המלצת החודש ⭐";
+  position: absolute;
+  top: 20px;
+  right: -35px;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 40px;
+  transform: rotate(45deg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.price-card h3 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.price {
+  font-size: 4rem !important;
+  font-weight: 800;
+  color: #2c3e50;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.price small {
+  font-size: 1.2rem;
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.price-card ul {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.price-card ul li {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price-card ul li::before {
+  content: "✅";
+  font-size: 1.2rem;
+}
+
+/* Pricing Section Background */
+.pricing {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+}
+
+.pricing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 123, 255, 0.05) 0%,
+    rgba(0, 123, 255, 0) 100%
+  );
+  pointer-events: none;
+}
+
+/* WhatsApp Button in Price Card */
+.price-card .btn-success {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.price-card .btn-success:hover {
+  transform: scale(1.05);
+}
+
+/* Renewal Price Note */
+.renewal-price {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Features List Animation */
+.price-card ul li {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.price-card ul li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.price-card ul li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.price-card ul li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.price-card ul li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.btn-primary {
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+}
+
+/* RTL Specific Adjustments */
+.modal-header .btn-close {
+  margin: 0;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Language Switch Button */
+.lang-switch {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 40vh;
+    padding: 2rem 0;
+  }
+
+  .feature-card {
+    margin-bottom: 1rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1.25rem;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Gallery Styles */
+.gallery-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Image Modal Styles */
+#imageModal .modal-content {
+  background-color: transparent;
+  border: none;
+}
+
+#imageModal .modal-header {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  background: transparent;
+}
+
+#imageModal .btn-close {
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+#modalImage {
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+/* כותרות */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+}
+
+/* סגנון מיוחד לכותרת הראשית */
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .lead {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* כותרות משניות */
+section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+/* כותרות בכרטיסי התכונות */
+.feature-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+/* כפתורים */
+.btn {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+/* Buttons Wrapper */
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* WhatsApp Button */
+.btn-success {
+  background-color: #25d366;
+  border-color: #25d366;
+}
+
+.btn-success:hover {
+  background-color: #128c7e;
+  border-color: #128c7e;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .buttons-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .buttons-wrapper .btn {
+    margin: 0.25rem 0;
+  }
+}
+
+/* Mobile & Tablet Adjustments */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero-section {
+    min-height: 50vh;
+    padding: 3rem 0;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  /* Features Section */
+  .feature-card {
+    margin-bottom: 1rem;
+    padding: 1.5rem !important;
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Gallery Section */
+  .gallery-item {
+    margin-bottom: 1rem;
+  }
+
+  .gallery-item img {
+    height: 150px;
+  }
+
+  /* Price Card */
+  .price-card {
+    padding: 1.5rem !important;
+    margin: 0 1rem;
+  }
+
+  .price-card::before {
+    font-size: 0.8rem;
+    padding: 5px 30px;
+    top: 15px;
+    right: -30px;
+  }
+
+  .price-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    font-size: 3rem !important;
+    margin: 1rem 0;
+  }
+
+  .price small {
+    font-size: 1rem;
+  }
+
+  .price-card ul {
+    margin: 1.5rem 0;
+    padding: 0;
+  }
+
+  .price-card ul li {
+    font-size: 1rem;
+    margin: 0.75rem 0;
+  }
+
+  .price-card .btn-success {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  .renewal-price {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+
+  /* Section Headers */
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* General Spacing */
+  .py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Modal Adjustments */
+  #imageModal .modal-dialog {
+    margin: 0.5rem;
+  }
+
+  #modalImage {
+    max-height: 70vh;
+  }
+}
+
+/* Small Mobile Adjustments */
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+
+  .price-card {
+    padding: 1.25rem !important;
+    margin: 0 0.5rem;
+  }
+
+  .price {
+    font-size: 2.5rem !important;
+  }
+
+  .buttons-wrapper .btn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .gallery-item img {
+    height: 120px;
+  }
+}
+
+/* Landscape Mode Adjustments */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh;
+  }
+
+  .hero-section .container {
+    padding: 6rem 1rem;
+  }
+
+  .gallery-item img {
+    height: 100px;
+  }
+}
+
+/* Features Grid Adjustments */
+@media (max-width: 768px) {
+  .features .row {
+    margin: 0 -0.5rem;
+  }
+
+  .features .col-md-3 {
+    padding: 0 0.5rem;
+  }
+
+  .feature-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .feature-card p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .features .col-md-3 {
+    width: 50%; /* 2 cards per row on very small screens */
+  }
+}
